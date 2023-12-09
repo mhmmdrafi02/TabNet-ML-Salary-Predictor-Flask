@@ -7,7 +7,6 @@ Proyek ini mengimplementasikan model prediksi gaji menggunakan algoritma machine
 Berikut adalah tampilan dari aplikasi yang dijalankan secara lokal:
 
 ![Prediction](image/web-deploy.png)
-*Hasil Prediksi Gaji*
 
 ### Prerequisites
 
@@ -53,10 +52,10 @@ Pastikan Anda telah menginstal prasyarat berikut:
 
 ## Struktur Proyek
 
-- `app.py`: Berkas aplikasi Flask.
-- `tabnet_model.zip`: Model TabNet yang telah dilatih.
-- `templates/`: Templat HTML untuk aplikasi Flask.
-- `image/`: Gambar tampilan deploy.
+- [`app.py`](app.py): Berkas aplikasi Flask.
+- [`tabnet_model.zip`](tabnet_model.zip): Model TabNet yang telah dilatih.
+- [`templates/`](templates/): Templat HTML untuk aplikasi Flask.
+- [`image/`](image/): Gambar tampilan deploy.
 
 ## Customization
 
