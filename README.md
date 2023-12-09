@@ -20,8 +20,8 @@ Pastikan Anda telah menginstal prasyarat berikut:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/username/salary-prediction.git
-    cd salary-prediction
+    git clone https://github.com/mhmmdrafi02/TabNet-ML-Salary-Predictor-Flask.git
+    cd TabNet-ML-Salary-Predictor-Flask
     ```
 
 2. Create and activate a virtual environment (optional):
