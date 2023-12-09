@@ -61,7 +61,7 @@ Pastikan Anda telah menginstal prasyarat berikut:
 
 Anda dapat menyesuaikan model dan aplikasi Flask sesuai kebutuhan dengan memodifikasi berkas yang relevan. Selain itu, silakan tingkatkan UI/UX dan styling di folder `templates`.
 
-## Berkontribusi
+## Kontribusi
 
 Jika Anda menemukan masalah atau memiliki perbaikan, jangan ragu untuk membuka isu atau membuat pull request.
 
