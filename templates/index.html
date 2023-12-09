@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Styling -->
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        hr {
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #4caf50;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #result {
+            margin-top: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Heading -->
+    <h1>Salary Prediction</h1>
+    <hr>
+
+    <!-- Form for File Upload -->
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <label>Select CSV File</label>
+        <input type="file" name="data_file">
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- Prediction Result Display -->
+    <h3 style="color: #ff5722;">{{ prediction_text }}</h3>
+    <h3>{{ time_text }}</h3>
+    <h3>{{ accuracy_text }}</h3>
+
+    <!-- Dataset and Predictions Display -->
+    <div id="result">
+        <h3>Dataset and Predictions</h3>
+        {{ df_table | safe }}
+    </div>
+</body>
+
+</html>

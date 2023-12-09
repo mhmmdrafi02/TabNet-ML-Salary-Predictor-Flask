@@ -1,0 +1,10 @@
+Flask
+numpy
+pandas
+scikit-learn
+nltk
+tensorflow
+keras
+matplotlib
+pytorch-tabnet
+torch
