@@ -15,10 +15,7 @@ loaded_model = TabNetClassifier()
 loaded_model.load_model('tabnet_model.zip')
 
 # Fungsi untuk melakukan feature engineering pada dataframe
-def feature_engineering(df):
-    df.columns = ['age', 'workclass', 'education', 'education_num', 'marital_status', 'occupation', 'relationship', 'race',
-                  'sex', 'capital_gain', 'capital_loss', 'hours_per_week', 'income_>50K']
-    
+def feature_engineering(df):  
     df = df.drop('income_>50K', axis=1)
 
     label_encoder = LabelEncoder()
@@ -32,11 +29,9 @@ def feature_engineering(df):
 # Fungsi untuk melakukan standard scaling pada dataframe
 def scalar(df):
     sc = StandardScaler()
-    X =  df[['age', 'workclass', 'education', 'education_num', 'marital_status', 'occupation', 'relationship', 
-            'race', 'sex', 'capital_gain', 'capital_loss', 'hours_per_week']]
-    X = sc.fit_transform(X)
+    df = sc.fit_transform(df)
 
-    return X
+    return df
 
 # Route untuk halaman utama
 @app.route('/', methods=['GET'])
@@ -61,20 +56,17 @@ def predict():
     dfx = feature_engineering(df)
 
     # Melakukan standard scaling
-    X = scalar(dfx)
+    dfx = scalar(dfx)
 
     # Melakukan prediksi dengan model TabNet
-    result = loaded_model.predict(X)
+    result = loaded_model.predict(dfx)
 
     # Menghitung waktu eksekusi prediksi
     end_time = datetime.now()
     prediction_time = (end_time - start_time).total_seconds()
 
-    # Mengubah hasil prediksi menjadi label '>50k' atau '<=50k'
-    result_labels = np.where(result == 1, '>50k', '<=50k')
-
     # Menambah kolom hasil prediksi pada dataframe
-    df['Predicted_Label'] = result_labels
+    df['Predicted_Label'] = result
     
     # Menghitung akurasi prediksi
     ground_truth = df['income_>50K'].values
@@ -82,10 +74,10 @@ def predict():
 
     # Menampilkan hasil prediksi dan akurasi pada halaman web
     return render_template('index.html', 
-                            prediction_text="Predicted Salary is/are: {}".format(result_labels),
-                           time_text="Prediction Time: {:.4f} seconds".format(prediction_time),
-                           accuracy_text="Accuracy: {:.2%}".format(accuracy),
-                           df_table=df.to_html())
+                            prediction_text="Predicted Salary is/are: {}".format(result),
+                            time_text="{:.4f} seconds".format(prediction_time),
+                            accuracy_text="{:.2%}".format(accuracy),
+                            df_table=df.to_html())
 
 # Menjalankan aplikasi Flask
 if __name__ == "__main__":
