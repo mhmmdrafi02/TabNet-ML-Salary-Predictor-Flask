@@ -2,20 +2,26 @@
 
 Proyek ini mengimplementasikan model prediksi gaji menggunakan algoritma machine learning TabNet dan mengaksesnya melalui aplikasi web Flask. Pengguna dapat mengunggah file CSV yang berisi fitur yang relevan, dan sistem akan memprediksi apakah gaji lebih dari $50K.
 
+## Model
+Model yang digunakan adalah model TabNet, sebuah algoritma machine learning yang efektif untuk tugas klasifikasi dan regresi. Algoritma ini menggabungkan kemampuan pembelajaran mendalam dengan interpretabilitas model yang tinggi.
+
+## Dataset
+Dataset yang digunakan adalah dataset income yang terdiri dari 15 fitur dan 43,956 data. Fitur-fitur tersebut mencakup informasi yang relevan untuk memprediksi tingkat pendapatan seseorang. Dataset ini telah diproses dan dipersiapkan untuk pelatihan model TabNet.
+
 ## Menampilkan Deploy Lokal
 
 Berikut adalah tampilan dari aplikasi yang dijalankan secara lokal:
 
 ![Prediction](image/web-deploy.png)
 
-### Prerequisites
+## Prerequisites
 
 Pastikan Anda telah menginstal prasyarat berikut:
 
 - Python 3.x
 - Virtualenv
 
-### Installation
+## Installation
 
 1. Clone the repository:
 
@@ -56,6 +62,7 @@ Pastikan Anda telah menginstal prasyarat berikut:
 - [`tabnet_model.zip`](tabnet_model.zip): Model TabNet yang telah dilatih.
 - [`templates/`](templates/): Templat HTML untuk aplikasi Flask.
 - [`image/`](image/): Gambar tampilan deploy.
+- [`dataset/`](dataset/): Gambar tampilan deploy.
 
 ## Customization
 
