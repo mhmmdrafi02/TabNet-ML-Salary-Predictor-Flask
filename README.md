@@ -62,7 +62,7 @@ Pastikan Anda telah menginstal prasyarat berikut:
 - [`tabnet_model.zip`](tabnet_model.zip): Model TabNet yang telah dilatih.
 - [`templates/`](templates/): Templat HTML untuk aplikasi Flask.
 - [`image/`](image/): Gambar tampilan deploy.
-- [`dataset/`](dataset/): Gambar tampilan deploy.
+- [`dataset/`](dataset/): Dataset yang digunakan dalam pelatihan model TabNet.
 
 ## Customization
 
